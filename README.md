@@ -1,7 +1,7 @@
 # SPARQL-parse
 Help you get attribute/component of a SPARQL query, and query it (if you have a local endpoint)
 
-'''python
+```python
 #Initial a SPARQL object 
 sparql_query='SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/international> <http://dbpedia.org/resource/Muslim_Brotherhood> . ?x <http://dbpedia.org/ontology/religion> ?uri  . ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/PoliticalParty>}'
 a=SPARQL(sparql_query)
@@ -53,4 +53,4 @@ a.query()
 Out[10]: 
 ['http://dbpedia.org/resource/Sunni_Islam',
  'http://dbpedia.org/resource/Islam']
-'''
+```
