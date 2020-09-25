@@ -2,12 +2,9 @@
 """
 Created on Thu Sep 24 21:42:48 2020
 
-@author: 黄祥
+@author: njucsxh
 """
-#不标准的情况：
-#WHERE,SELECT,ASK没有大写
-#代求变量多于实际数量，不写代求变量
-#完整链接的生成，应该严格按照前缀，简写形式的生成，才需要字典，确认一下
+
 import re
 
 import json
