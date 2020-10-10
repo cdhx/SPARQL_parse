@@ -1,4 +1,4 @@
-# SPARQL-parse
+# SPARQL_parse
 SPARQL-parse helps you get attribute/component of a SPARQL query or query it easily.
 
 ```python
