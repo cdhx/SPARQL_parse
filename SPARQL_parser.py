@@ -48,9 +48,9 @@ class RegexDict(dict):
 class SPARQL(object):
     def __init__(self, raw_sparql, *filename):
         self.raw_sparql = raw_sparql
-        if (filename != None):
+        try:
             self.filename = filename[0]
-        else:
+        except:
             self.filename = '123'
         self.pre_map = {
             'prop': '<http://dbpedia.org/property/>',
@@ -305,12 +305,12 @@ class SPARQL(object):
     def set_abbr_triple_list(self):
         abbr_triple_content = self.abbr_where.replace('}', '').replace('{', '').replace('WHERE', '').replace('where',
                                                                                                              '').strip()
-        self.abbr_triple_list = list(map(lambda x: x.strip(), abbr_triple_content.split(' . ')))
+        self.abbr_triple_list = list(map(lambda x: x.strip(), abbr_triple_content.split('. ')))
 
     def set_triple_info(self):
-        self.triple_num = len(self.where.split(' . '))
+        self.triple_num = len(self.where.split('. '))
         triple_content = self.where.replace('}', '').replace('{', '').replace('WHERE', '').replace('where', '').strip()
-        self.triple_list = list(map(lambda x: x.strip(), triple_content.split(' . ')))
+        self.triple_list = list(map(lambda x: x.strip(), triple_content.split('. ')))
 
     # TODO不完善，约束可能在WHERE里面
     def set_constrain(self):
