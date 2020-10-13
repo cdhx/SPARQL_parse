@@ -33,6 +33,7 @@ import requests
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 
+
 class RegexDict(dict):
     import re
     def __init__(self, *args, **kwds):
@@ -388,9 +389,9 @@ class SPARQL(object):
         self.ip_address = ip
 
     def query(self):
-        sparql = SPARQLWrapper('http://' + self.ip_address + ':8890/sparql')
+        #sparql = SPARQLWrapper('http://' + self.ip_address + ':8890/sparql')
         # HXX完整DBpedia
-        # sparql = SPARQLWrapper('http://114/212/86/218:8890/sparql')
+        sparql = SPARQLWrapper('http://114.212.86.218:8890/sparql')
         sparql.setQuery(self.raw_sparql)
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()  # json,type为dict
